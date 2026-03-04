@@ -1,28 +1,55 @@
-# OpaqueInfra — Stage 2
+OI Verifier
 
-Clean implementation of OpaqueInfra spec v1.1.0 (red-team hardened, baseline-locked).
+Reference verifier and conformance suite for OI bundles.
 
-## What this is
+This repository contains the reference implementation used to verify OI bundles.
+Verification is deterministic, offline, and performed at the byte level.
 
-Tamper-evident evidence infrastructure. Bundles are sealed with Ed25519 signatures.
-Verification is offline, byte-level, and deterministic.
+What this is
 
-SEALED means: untampered since sealing.
+OI provides tamper-evident evidence infrastructure.
+
+Bundles are sealed with Ed25519 signatures and verified against the bundle manifest and checksums.
+
+Verification checks:
+	•	signature validity
+	•	canonical JSON encoding
+	•	artifact checksums
+	•	bundle structure
+
+SEALED means: the bundle has not been altered since sealing.
 SEALED does NOT mean: true, complete, authorized, compliant, or admissible.
 
-## Spec
+Quick start
 
-The normative spec tree is in `oi-docs/`. It is immutable. Code conforms to spec.
+Run verification against a bundle:
 
-## Build order
+python verifier-kit/verify.py <bundle_path>
 
-See `BUILD_ORDER.md`. Stages are sequential with human approval gates.
+Example:
 
-## Governance
+python verifier-kit/verify.py golden/cyber/bundle_valid
 
-See `CLAUDE.md` for rules, schemas, and banned tokens.
-See `AI_CHANGE_LOG.md` for the AI-assisted development ledger.
+Conformance suite
 
-## License
+The repository includes a deterministic conformance suite under:
 
-See LICENSE.
+conformance/
+
+These vectors define the expected behavior of compliant verifiers.
+
+Implementations that pass the conformance vectors should produce identical verification outcomes.
+
+Repository structure
+
+verifier-kit/        reference verification implementation
+lib/                 canonical JSON + Ed25519 helpers
+conformance/         verification test vectors
+golden/              example sealed bundles
+test_bundle_valid/   valid bundle examples
+test_bundle_tampered/ tampered bundle examples
+
+License
+
+Apache License 2.0
+:::
