@@ -1,0 +1,9 @@
+{
+  "policy_version": "1.0.0",
+  "policy_name": "rt04-allow",
+  "created_at_utc_declared": "2026-03-02T00:00:00Z",
+  "allow": [
+    "09f0312a27f85686a58b1bdbc937b8dc47ee4e3a53a92c672cfc8ecbaa186401"
+  ],
+  "deny": []
+}

@@ -1,0 +1,1 @@
+{"entries":[{"artifact_paths":["artifacts/firewall_export.log"],"captured_at_utc_declared":"2026-03-02T22:23:05Z","record_id":"cyber-rec-001","source":"firewall-logs"},{"artifact_paths":["artifacts/endpoint_snapshot.txt"],"captured_at_utc_declared":"2026-03-02T22:23:05Z","record_id":"cyber-rec-002","source":"endpoint-telemetry"}],"records_version":"1"}

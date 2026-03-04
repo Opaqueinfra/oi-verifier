@@ -1,0 +1,1 @@
+{"active_key_ids":["test-key-001"],"keys":[{"algorithm":"ed25519","fingerprint_sha256":"21740dffb84ab600aebb6c9fb65e089de66f3af983b5e602c9c2492e2d9ea829","key_id":"test-key-001","public_key_b64":"JuChoDSrOONt097i7bjDbWRKrkcfO/RqcbtYVW0q6GY=","valid_from_utc_declared":"2026-01-01T00:00:00Z","valid_to_utc_declared":null}],"keyset_version":"1"}

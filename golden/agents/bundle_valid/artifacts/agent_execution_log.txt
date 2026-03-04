@@ -1,0 +1,1 @@
+agent_id=agent-042 model=gpt-4o task=summarize tokens_in=1500 tokens_out=320 status=completed
