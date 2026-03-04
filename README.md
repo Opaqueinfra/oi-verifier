@@ -1,55 +1,43 @@
-OI Verifier
+# OpaqueInfra Verifier
 
-Reference verifier and conformance suite for OI bundles.
+Offline, deterministic integrity verification for OpaqueInfra evidence bundles.
 
-This repository contains the reference implementation used to verify OI bundles.
-Verification is deterministic, offline, and performed at the byte level.
+## What it does
 
-What this is
+The OpaqueInfra verifier checks sealed evidence bundles at the byte level. It produces a binary verdict: `INTEGRITY: SEALED` or `INTEGRITY: BROKEN`. It runs offline — no network, no account, no vendor infrastructure required.
 
-OI provides tamper-evident evidence infrastructure.
+## Quick start
 
-Bundles are sealed with Ed25519 signatures and verified against the bundle manifest and checksums.
+```
+pip install cryptography
+python3 verifier-kit/verify.py path/to/bundle/
+python3 verifier-kit/verify.py bundle.zip
+```
 
-Verification checks:
-	•	signature validity
-	•	canonical JSON encoding
-	•	artifact checksums
-	•	bundle structure
+## What SEALED means
 
-SEALED means: the bundle has not been altered since sealing.
-SEALED does NOT mean: true, complete, authorized, compliant, or admissible.
+- The bundle has not been modified since sealing
+- The Ed25519 signature is mathematically valid
 
-Quick start
+## What SEALED does not mean
 
-Run verification against a bundle:
+SEALED does not assert identity, authorization, correctness, completeness, compliance, or admissibility. A sealed bundle is only as honest as the recorder that produced it.
 
-python verifier-kit/verify.py <bundle_path>
+## Repository contents
 
-Example:
+- `verifier-kit/` — verifier source code
+- `lib/` — support modules (Ed25519, canonical JSON)
+- `golden/` — frozen reference bundles (valid + tampered)
+- `conformance/` — conformance tests
 
-python verifier-kit/verify.py golden/cyber/bundle_valid
+## License
 
-Conformance suite
+Apache 2.0 — see [LICENSE](LICENSE).
 
-The repository includes a deterministic conformance suite under:
+## Trademark
 
-conformance/
+OpaqueInfra is a trademark of OpaqueInfra. See [TRADEMARK.md](TRADEMARK.md).
 
-These vectors define the expected behavior of compliant verifiers.
+## Contact
 
-Implementations that pass the conformance vectors should produce identical verification outcomes.
-
-Repository structure
-
-verifier-kit/        reference verification implementation
-lib/                 canonical JSON + Ed25519 helpers
-conformance/         verification test vectors
-golden/              example sealed bundles
-test_bundle_valid/   valid bundle examples
-test_bundle_tampered/ tampered bundle examples
-
-License
-
-Apache License 2.0
-:::
+records@opaqueinfra.com

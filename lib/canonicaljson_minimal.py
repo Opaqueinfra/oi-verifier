@@ -5,7 +5,7 @@
 """
 Minimal RFC 8785 JSON Canonicalization Scheme (JCS) implementation.
 
-Spec reference: oi-docs/02_spec/01_bundle_format_spec.md Section 6
+Implements JSON Canonicalization Scheme per RFC 8785.
 """
 
 import json

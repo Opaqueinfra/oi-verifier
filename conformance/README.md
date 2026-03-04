@@ -1,6 +1,6 @@
-# Conformance Test Suite — OpaqueInfra v1.1.0
+# Conformance Test Suite — OpaqueInfra
 
-Normative reference: `oi-docs/05_verification/04_conformance_test_vectors.md`
+Conformance tests for the OpaqueInfra verifier.
 
 ## Rule
 

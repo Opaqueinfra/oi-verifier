@@ -1,1 +1,0 @@
-This bundle does not verify identity, authorization, compliance, or completeness.

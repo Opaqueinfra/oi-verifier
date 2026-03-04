@@ -7,7 +7,7 @@
 OpaqueInfra Verifier
 
 Implements the normative verifier decision tree (Steps 1–12 including 4b).
-Spec: oi-docs/05_verification/01_verifier_decision_tree.md
+See README.md for verification details.
 
 SEALED means: untampered since sealing.
 SEALED does NOT mean: true, complete, authorized, compliant, or admissible.

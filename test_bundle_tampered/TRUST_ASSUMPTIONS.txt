@@ -1,1 +1,0 @@
-Integrity is byte-level only. No identity or authorization claims are made.

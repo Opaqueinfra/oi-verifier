@@ -6,7 +6,7 @@
 Ed25519 signature primitives for OpaqueInfra verifier.
 
 Uses raw 32-byte public keys (NOT PKCS8, NOT SPKI).
-Spec reference: oi-docs/02_spec/02_receipt_and_signature_spec.md
+See README.md for verification details.
 """
 
 from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PublicKey
